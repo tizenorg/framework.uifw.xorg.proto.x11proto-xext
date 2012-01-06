@@ -1,0 +1,27 @@
+Source: x11proto-xext
+Section: x11
+Priority: optional
+Maintainer: Sung-Jin Park <sj76.park@samsung.com>, SangJin Lee <lsj119@samsung.com>, Debian X Strike Force <debian-x@lists.debian.org>
+Uploaders: SooChan Lim <sc1.lim@samsung.com>, Sung-Jin Park <sj76.park@samsung.com>, David Nusinow <dnusinow@debian.org>, Andres Salomon <dilinger@debian.org>, Julien Cristau <jcristau@debian.org>
+Build-Depends: debhelper (>= 5.0.0), xutils-dev (>= 1:7.4+4), autoconf, automake
+Standards-Version: 3.8.3
+Vcs-Git: git://git.debian.org/git/pkg-xorg/proto/x11proto-xext
+Vcs-Browser: http://git.debian.org/?p=pkg-xorg/proto/x11proto-xext.git
+
+Package: x11proto-xext-dev
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, x11proto-input-dev, libxau-dev
+Breaks:
+ libxext-dev (<< 2:1.0.99),
+ libxtst-dev (<< 2:1.0.99)
+Description: X11 various extension wire protocol
+ This package provides development headers describing the wire protocol
+ for various extensions, the client-side libraries of which are provided
+ in the Xext library.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
+ <URL:http://xorg.freedesktop.org>
+ <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This package is built from the X.org xextproto proto module.
