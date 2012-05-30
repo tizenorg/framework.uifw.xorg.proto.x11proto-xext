@@ -7,6 +7,7 @@ Group:      Development/System
 License:    MIT
 URL:        http://www.x.org
 Source0:    http://xorg.freedesktop.org/releases/individual/proto/xextproto-%{version}.tar.gz
+Source1001: packaging/xorg-x11-proto-xextproto.manifest 
 Provides:   xextproto
 BuildRequires: pkgconfig(xorg-macros)
 
@@ -20,6 +21,7 @@ Description: %{summary}
 
 
 %build
+cp %{SOURCE1001} .
 %reconfigure --prefix=/usr --mandir=%{_datadir}/man --infodir=%{_datadir}/info \
 	--disable-shared \
 	CFLAGS="-Wall -g -D_F_ENABLE_XI2_SENDEVENT_"
@@ -42,6 +44,7 @@ rm -rf %{buildroot}
 
 
 %files
+%manifest xorg-x11-proto-xextproto.manifest
 %defattr(-,root,root,-)
 %{_libdir}/pkgconfig/xextproto.pc
 %{_includedir}/X11/extensions/*.h
