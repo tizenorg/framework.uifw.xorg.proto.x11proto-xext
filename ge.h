@@ -29,11 +29,7 @@
 
 #define GE_NAME         "Generic Event Extension"
 #define GE_MAJOR        1
-#ifndef _F_ENABLE_XI2_SENDEVENT_
 #define GE_MINOR        0
-#else//_F_ENABLE_XI2_SENDEVENT_
-#define GE_MINOR        1
-#endif//_F_ENABLE_XI2_SENDEVENT_
 
 /*********************************************************
  *
@@ -42,13 +38,8 @@
  */
 
 #define X_GEQueryVersion        0
-#ifdef _F_ENABLE_XI2_SENDEVENT_
-#define X_GESendEvent           1
 
-#define GENumberRequests       (X_GESendEvent + 1)
-#else//_F_ENABLE_XI2_SENDEVENT_
 #define GENumberRequests       (X_GEQueryVersion + 1)
-#endif//_F_ENABLE_XI2_SENDEVENT_
 
 /*********************************************************
  *

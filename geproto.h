@@ -79,22 +79,7 @@ typedef struct {
     CARD32	pad04 B32;
 } xGEQueryVersionReply;
 
-#ifndef _F_ENABLE_XI2_SENDEVENT_
 #define sz_xGEQueryVersionReply    32
-#else//_F_ENABLE_XI2_SENDEVENT_
-typedef struct {
-    CARD8   reqType;
-    CARD8   ReqType;
-    CARD16  length B16;
-    CARD8   propagate;
-    CARD8   pad1;
-    CARD16  pad2;
-    CARD32  destination B32;
-    CARD32  eventMask B32;
-} xGESendEventReq;
-
-#define sz_xGESendEventReq    16
-#endif//_F_ENABLE_XI2_SENDEVENT_
 
 #endif /* _GEPROTO_H_ */
 
