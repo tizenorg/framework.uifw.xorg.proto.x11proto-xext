@@ -1,7 +1,7 @@
 Name:     xorg-x11-proto-xext
 Summary:  X.Org X11 Protocol xextproto
-Version:  7.2.1
-Release:  2
+Version:  7.3.1
+Release:  1
 Group:    Development/System
 License:  MIT
 URL:      http://www.x.org
@@ -27,7 +27,7 @@ Description: %{summary}
 %reconfigure --disable-static \
              --libdir=%{_datadir} \
              --without-xmlto \
-	          CFLAGS="$CFLAGS -Wall -g "	
+	          CFLAGS="$CFLAGS -Wall -g "
 
 # Call make instruction with smp support
 make %{?jobs:-j%jobs}
@@ -45,4 +45,3 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %{_includedir}/X11/extensions/*.h
 %{_datadir}/pkgconfig/*.pc
-

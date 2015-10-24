@@ -107,6 +107,20 @@ typedef struct {
 #define sz_xXTestFakeInputReq 36
 
 typedef struct {
+    BYTE	type;			/* X_Reply */
+    BOOL	accepted;
+    CARD16	sequenceNumber B16;
+    CARD32	length B32;
+    CARD32	pad0 B32;
+    CARD32	pad1 B32;
+    CARD32	pad2 B32;
+    CARD32	pad3 B32;
+    CARD32	pad4 B32;
+    CARD32	pad5 B32;
+} xXTestFakeInputReply;
+#define sz_xXTestFakeInputReply 32
+
+typedef struct {
     CARD8	reqType;	/* always XTestReqCode */
     CARD8	xtReqType;	/* always X_XTestGrabControl */
     CARD16	length B16;
